@@ -17,10 +17,9 @@ if ($click == 1) {
 	# Entries must be present in /usr/share/zoneinfo (Olson DB).
 	my %tzmap = (
 		""                   => $default_tz,
-		$default_tz          => "Brazil/East",
-		"Brazil/East"        => "Australia/Brisbane",
-		"Australia/Brisbane" => "Asia/Calcutta",
-		"Asia/Calcutta"      => $default_tz,
+		$default_tz          => "Australia/Canberra",
+		"Australia/Canberra" => "Portugal/Lisbon",
+		"Portugal/Lisbon"    => $default_tz,
 	);
 
 	if (exists $tzmap{$current_tz}) {
@@ -31,10 +30,9 @@ if ($click == 1) {
 
 # How each timezone will be displayed in the bar.
 my %display_map = (
-	$default_tz          => "Home",
-	"Brazil/East"        => "Brazil",
-	"Australia/Brisbane" => "AU",
-	"Asia/Calcutta"      => "Hyderabad",
+	$default_tz          => "SE",
+	"Australia/Canberra" => "AU",
+	"Portugal/Lisbon"    => "PT",
 );
 
 $ENV{TZ}       = $current_tz || get_tz();
