@@ -17,7 +17,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 setxkbmap -query | awk '
-    BEGIN{layout="";variant=""}
+    BEGIN{layout=""}
     /^layout/{layout=$2}
-    /^variant/{variant=" ("$2")"}
-    END{printf("%s%s",layout,variant)}'
+    END{printf("%s",layout)}'
